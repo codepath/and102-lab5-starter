@@ -5,11 +5,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.codepath.campgrounds.R
+
 
 private const val TAG = "CampgroundDetailActivity"
 const val CAMPGROUND_EXTRA = "CAMPGROUND_EXTRA"
 
-class CampgroundDetailActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var nameTextView: TextView
     private lateinit var locationTextView: TextView

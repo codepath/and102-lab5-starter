@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-const val CAMPGROUND_EXTRA = "CAMPGROUND_EXTRA"
+
 private const val TAG = "CampgroundAdapter"
 
 class CampgroundAdapter(private val context: Context, private val campgrounds: List<Campground>) :
@@ -50,7 +50,7 @@ class CampgroundAdapter(private val context: Context, private val campgrounds: L
 
         override fun onClick(v: View?) {
             val campground = campgrounds[absoluteAdapterPosition]
-            val intent = Intent(context, CampgroundDetailActivity::class.java)
+            val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra(CAMPGROUND_EXTRA, campground)
             context.startActivity(intent)
         }
