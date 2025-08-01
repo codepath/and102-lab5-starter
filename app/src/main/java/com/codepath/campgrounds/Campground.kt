@@ -1,11 +1,39 @@
 package com.codepath.campgrounds
 
-import java.io.Serializable
+
+import android.support.annotation.Keep
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Keep
+@Serializable
+data class CampgroundResponse(
+    @SerialName("data")
+    val data: List<Campground>?
+)
 
 // Data class representing a campground
+@Keep
+@Serializable
 data class Campground(
-    val name: String,
-    val location: String,
-    val description: String,
+    @SerialName("description")
+    val description: String?,
+    @SerialName("latLong")
+    val latLong: String?,
+    @SerialName("name")
+    val name: String?,
+    @SerialName("images")
+    val images: List<CampgroundImage>?
+) : java.io.Serializable {
+    // Convenience property to easily get the first image URL if it exists
     val imageUrl: String
-) : Serializable
+        get() = images?.firstOrNull { !it.url.isNullOrEmpty() }?.url ?: ""
+}
+
+
+@Keep
+@Serializable
+data class CampgroundImage(
+    @SerialName("url") val url: String?,
+    @SerialName("title") val title: String?
+) : java.io.Serializable

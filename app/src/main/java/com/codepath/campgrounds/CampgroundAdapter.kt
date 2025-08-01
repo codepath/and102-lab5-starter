@@ -34,6 +34,7 @@ class CampgroundAdapter(private val context: Context, private val campgrounds: L
         private val imageView = itemView.findViewById<ImageView>(R.id.campgroundImage)
         private val nameTextView = itemView.findViewById<TextView>(R.id.campgroundName)
         private val locationTextView = itemView.findViewById<TextView>(R.id.campgroundLocation)
+        private val descriptionTextView = itemView.findViewById<TextView>(R.id.campgroundDescription)
 
         init {
             itemView.setOnClickListener(this)
@@ -41,7 +42,8 @@ class CampgroundAdapter(private val context: Context, private val campgrounds: L
 
         fun bind(campground: Campground) {
             nameTextView.text = campground.name
-            locationTextView.text = campground.location
+            locationTextView.text = campground.latLong
+            descriptionTextView.text = campground.description
 
             Glide.with(context)
                 .load(campground.imageUrl)

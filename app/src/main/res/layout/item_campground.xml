@@ -4,18 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="200dp">
 
+    <!-- Campground image -->
     <ImageView
-        android:id="@+id/mediaImage"
+        android:id="@+id/campgroundImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="Campground Image"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent=".35" />
 
+    <!-- Campground name -->
     <TextView
-        android:id="@+id/mediaTitle"
+        android:id="@+id/campgroundName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -23,25 +26,44 @@
         android:layout_marginEnd="10dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="Title"
+        android:text="Campground Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/mediaImage"
-        app:layout_constraintTop_toTopOf="@+id/mediaImage" />
+        app:layout_constraintStart_toEndOf="@id/campgroundImage"
+        app:layout_constraintTop_toTopOf="@id/campgroundImage" />
 
+    <!-- Campground location -->
     <TextView
-        android:id="@+id/mediaAbstract"
+        android:id="@+id/campgroundLocation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Location"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/campgroundImage"
+        app:layout_constraintTop_toBottomOf="@id/campgroundName" />
+
+    <!-- Campground description -->
+    <TextView
+        android:id="@+id/campgroundDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:ellipsize="end"
         android:maxLines="4"
-        android:text="Abstract"
+        android:text="Description"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mediaImage"
-        app:layout_constraintTop_toBottomOf="@+id/mediaTitle" />
+        app:layout_constraintStart_toEndOf="@id/campgroundImage"
+        app:layout_constraintTop_toBottomOf="@id/campgroundLocation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
