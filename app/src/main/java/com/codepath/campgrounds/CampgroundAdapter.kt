@@ -31,10 +31,10 @@ class CampgroundAdapter(private val context: Context, private val campgrounds: L
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
 
-        private val imageView = itemView.findViewById<ImageView>(R.id.campgroundImage)
         private val nameTextView = itemView.findViewById<TextView>(R.id.campgroundName)
-        private val locationTextView = itemView.findViewById<TextView>(R.id.campgroundLocation)
         private val descriptionTextView = itemView.findViewById<TextView>(R.id.campgroundDescription)
+        private val locationTextView = itemView.findViewById<TextView>(R.id.campgroundLocation)
+        private val imageView = itemView.findViewById<ImageView>(R.id.campgroundImage)
 
         init {
             itemView.setOnClickListener(this)
@@ -42,8 +42,8 @@ class CampgroundAdapter(private val context: Context, private val campgrounds: L
 
         fun bind(campground: Campground) {
             nameTextView.text = campground.name
-            locationTextView.text = campground.latLong
             descriptionTextView.text = campground.description
+            locationTextView.text = campground.latLong
 
             Glide.with(context)
                 .load(campground.imageUrl)
